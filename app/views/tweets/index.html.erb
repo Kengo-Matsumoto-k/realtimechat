@@ -1,0 +1,18 @@
+<h1>GeekTwitter</h1>
+<h3>All Tweet</h3>
+<%= link_to "new post", new_tweet_path %>
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+    <div class="tweet">
+      <%= t.user.email %>
+      <%= t.body %>
+      <%= t.created_at %>
+    </div>
+    <%= link_to "about", tweet_path(t.id) %>
+    <%= button_to "delete", tweet_path(t.id), method: :delete %>
+  <% end %>
+</div>
+
+<%= link_to 'real group chat', rooms_path %>
+<%= link_to 'not real group chat', groups_path %>
+<%= button_to 'logout', destroy_user_session_path, method: :delete %>

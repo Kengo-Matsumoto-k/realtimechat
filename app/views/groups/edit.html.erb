@@ -1,0 +1,12 @@
+<h1>edit group</h1>
+
+<%= form_with(model: @group, local: true) do |f| %>
+  <div class="group-new-form">
+    <div class="gtoup-new-form-name">
+      <%= f.label :name, 'group name' %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.collection_check_boxes :user_ids, User.all, :id, :username %>
+    </div>
+    <%= f.submit 'update', class: "btn btn-primary" %>
+  </div>
+<% end %>

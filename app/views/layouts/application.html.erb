@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geektwitter</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <%#= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>GeekTwitter</h1>
+      <div class="header-list">
+      <ul>
+        <li><%= link_to "ホーム", tweets_path %></li>
+        <li><%= link_to "新規投稿",new_tweet_path %></li>
+        <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+      </ul>
+      </div>
+    </header>
+    <%= yield %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
